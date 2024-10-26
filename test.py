@@ -1,7 +1,4 @@
-from PIL import Image, ImageDraw
-from sklearn.cluster import DBSCAN
-import numpy as np
-import random
+from PIL import Image
 
 image = Image.open('img.png')
 
@@ -21,7 +18,6 @@ fallOnWater = 0
 waterColumns = set()
 
 for x in range(width):
-    color = (random.randint(50, 255), random.randint(50, 255), random.randint(50, 255))
     for y in range(height):
         pixel = rgbImage.getpixel((x, y))
         if(pixel == waterColor):
